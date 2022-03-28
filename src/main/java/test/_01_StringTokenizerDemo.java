@@ -34,8 +34,6 @@ public class _01_StringTokenizerDemo {
 			s3 = s3.concat(tt.nextToken("!"));
 			s3 = s3.concat(tt.nextToken("!"));
 		System.out.println(s3);
-		
-		//tt
 	}
 	/*
 	 * ※※StringTokenizer 類別	→ 用以去除字串中指定的字符
