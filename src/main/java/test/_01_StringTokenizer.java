@@ -2,7 +2,7 @@ package test;
 
 import java.util.StringTokenizer;
 
-public class _01_StringTokenizerDemo {
+public class _01_StringTokenizer {
 	public static void main(String[] args) {
 		
 		System.out.println("------------練習1-----------");
@@ -41,7 +41,7 @@ public class _01_StringTokenizerDemo {
 	 * 		→ 若未指定字符，則會預設為空格，屆時將所有片段串起時會將字串中的全部空格一併去除
 	 * 	 
 	 * 	※相關方法:
-	 * 		1. t.countTokens()	→依循前面t宣告的字符將字串切割成片段，並【return int 片段總數】。
+	 * 		1. t.countTokens()	→依循前面t宣告的字符將字串切割成片段，並【return int →　片段總數】。
 	 * 		2. t.hasMoreTokens()	→【return boolean】檢查是否還有下一個字串片段，
 	 * 									應配合while loop使用，類似iterator的hasNext()。
 	 * 		   t.hasMoreElements()	→【return boolean】用法同 hasMoreTokens()，只是將String片段視為物件，
