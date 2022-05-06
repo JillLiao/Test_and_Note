@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Random;
+
 public class _02_isEmpty {
 
 	public static void main(String[] args) {
