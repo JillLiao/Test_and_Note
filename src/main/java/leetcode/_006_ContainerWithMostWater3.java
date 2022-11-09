@@ -1,7 +1,6 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.RecursiveTask;
@@ -47,6 +46,7 @@ public class _006_ContainerWithMostWater3 extends RecursiveTask<Integer>{
         List<Integer> areaList = new ArrayList<>();
 		
         for(int i=0;i<lens-1;i++) {
+        	
 			for(int k=i+1;k<lens;k++) {
 				areaList.add(Math.min(tArray[i], tArray[k]) * (k-i));	
 			}

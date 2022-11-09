@@ -1,31 +1,34 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
-public class _006_ContainerWithMostWater {
+public class _006_ContainerWithMostWater4 {
 	public int maxArea(int[] height) {
 		int lens = height.length;
-		int[] areaArray = new int[lens-1];
+		ArrayList<Integer> areaList = new ArrayList<>();
 		
-		int areaCount=0;
         for(int i=0;i<lens-1;i++) {
         	int countTemp=0;
         	int[] areaTempArray = new int[lens-i-1];
 			for(int k=i+1;k<lens;k++) {
 				switch(height[i]/height[k]) {
-					case 0:
-						areaTempArray[countTemp]= Math.min(height[i], height[k]) * (k-i);
+					case 0:						
+						areaTempArray[countTemp]= height[i] * (k-i);
 						countTemp++;
-					case 1:	
+					case 1:
+						if((k-i)> height[i]) {
+							areaTempArray[countTemp]= height[k] * (k-i);
+							countTemp++;
+						}
 				}				
 			}
-			System.out.println(Arrays.toString(areaTempArray));
+//			System.out.println(Arrays.toString(areaTempArray));
 			Integer maxAreaTemp = Arrays.stream(areaTempArray).max().getAsInt();
-			areaArray[areaCount] = maxAreaTemp;
-			areaCount++;
+			areaList.add(maxAreaTemp);
 		}
-        System.out.println(Arrays.toString(areaArray));
-        Integer maxArea = Arrays.stream(areaArray).max().getAsInt();
+        int maxArea = Collections.max(areaList);
 		return maxArea;
     }
 	public static void main(String[] args) {
